@@ -1,4 +1,4 @@
-package day1
+package main
 
 import (
 	"advent-of-code/utils"
@@ -8,12 +8,7 @@ import (
 	"strings"
 )
 
-const (
-	examplePath = "2022/day1/example"
-	inputPath   = "2022/day1/input"
-)
-
-func Day1() {
+func main() {
 	part1()
 	fmt.Println()
 	part2()
@@ -70,13 +65,5 @@ func getCaloriesByElve(elveCalories string) int {
 }
 
 func getData(example bool) []string {
-	var input string
-	if example {
-		input = examplePath
-	} else {
-		input = inputPath
-	}
-
-	data := utils.GetContentOfFile(input)
-	return strings.Split(data, "\n\n")
+	return strings.Split(utils.GetData(example), "\n\n")
 }
