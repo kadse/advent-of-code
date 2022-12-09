@@ -26,7 +26,7 @@ func part2() {
 
 func execPart1(example bool) int {
 	maxCalories := 0
-	for _, elveCalories := range getData(example) {
+	for _, elveCalories := range prepareData(example) {
 		sumCalories := getCaloriesByElve(elveCalories)
 
 		if maxCalories < sumCalories {
@@ -39,7 +39,7 @@ func execPart1(example bool) int {
 
 func execPart2(example bool) int {
 	var calories []int
-	for _, elveCalories := range getData(example) {
+	for _, elveCalories := range prepareData(example) {
 		calories = append(calories, getCaloriesByElve(elveCalories))
 	}
 
@@ -64,6 +64,6 @@ func getCaloriesByElve(elveCalories string) int {
 	return sumCalories
 }
 
-func getData(example bool) []string {
+func prepareData(example bool) []string {
 	return strings.Split(utils.GetData(example), "\n\n")
 }
